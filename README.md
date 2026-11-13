@@ -1,6 +1,6 @@
-# LLM Evals and Guardrails Handbook
+# LLM Evals, Guardrails and Agent Harness Handbook
 
-A simple, student-friendly handbook on **evaluating LLMs** and **adding guardrails to LLM apps**, with diagrams, runnable code and revision questions.
+A simple, student-friendly handbook on **evaluating LLMs**, **adding guardrails to LLM apps**, and **building agent harnesses**, with diagrams, runnable code and revision questions.
 
 - Written in plain, simple English.
 - Every chapter has a one-line summary, key terms, a diagram, and revision questions with answers.
@@ -50,9 +50,25 @@ Undergraduate students and beginners who know a little Python and want to unders
 12. [Add guardrails to a small app](guardrails/12-add-guardrails-to-a-small-app.md)
 - [Reading list](guardrails/papers.md)
 
+### Part 3: Agent harness
+
+The code around a model that turns it into an agent.
+
+1. [What an agent harness is](harness/01-what-is-an-agent-harness.md)
+2. [The agent loop](harness/02-the-agent-loop.md)
+3. [Tools and tool design](harness/03-tools-and-tool-design.md)
+4. [Context engineering](harness/04-context-engineering.md)
+5. [Memory and long tasks](harness/05-memory-and-long-tasks.md)
+6. [Planning and sub-agents](harness/06-planning-and-sub-agents.md)
+7. [Permissions and sandboxing](harness/07-permissions-and-sandboxing.md)
+8. [Reliability and observability](harness/08-reliability-and-observability.md)
+9. [Harnesses in practice](harness/09-harnesses-in-practice.md)
+10. [Build a mini harness](harness/10-build-a-mini-harness.md)
+- [Reading list](harness/papers.md)
+
 ### Suggested order
 
-Read Part 1 chapters 1 to 4 first. After that the two parts can be read in any order. Guardrails chapter 11 uses ideas from Part 1 chapter 3.
+Read Part 1 chapters 1 to 4 first. After that the parts can be read in any order. Guardrails chapter 11 uses ideas from Part 1 chapter 3. Part 3 links to Part 1 chapter 6 (evaluating agents) and to Part 2 chapters 2, 7 and 8.
 
 ## How to run the code
 
@@ -66,6 +82,11 @@ python ch03_bleu_rouge.py
 ```bash
 cd guardrails/code
 python ch02_injection_filter.py
+```
+
+```bash
+cd harness/code
+python ch02_agent_loop.py
 ```
 
 File names start with the chapter number, for example `ch05_rag_metrics.py` belongs to chapter 5.
@@ -94,8 +115,9 @@ All of these were run on Windows 11 with Python 3.14, with no key (mock model), 
 
 - `evaluations/code`: `llm_client.py`, `ch03_accuracy_f1.py`, `ch03_bleu_rouge.py`, `ch03_perplexity.py`, `ch03_bertscore_idea.py`, `ch04_llm_judge.py`, `ch05_rag_metrics.py`, `ch06_agent_eval.py`, `ch07_error_bars.py`, `ch08_red_team_eval.py`, `ch09_contamination_check.py`, `ch11_first_eval/run_eval.py`
 - `guardrails/code`: `ch01_guard_pipeline.py`, `ch02_injection_filter.py`, `ch03_pii_redaction.py`, `ch04_moderation_filter.py`, `ch05_grounding_check.py`, `ch06_structured_output.py`, `ch06_structured_output_pydantic.py`, `ch07_rate_and_cost_limits.py`, `ch08_human_approval.py`, `ch11_evaluate_guardrail.py`, `ch12_guarded_app/app.py`, `ch12_guarded_app/test_app.py` (11 of 11 tests pass)
+- `harness/code`: `ch02_agent_loop.py`, `ch03_tools.py`, `ch04_context_budget.py`, `ch05_memory.py`, `ch06_subagents.py`, `ch07_permissions.py`, `ch08_reliability.py`, `ch10_mini_harness/harness.py`, `ch10_mini_harness/test_harness.py` (13 of 13 tests pass)
 
-**Not tested:** a real OpenRouter call with a valid key. Only the fallback was tested (a wrong key correctly falls back to the mock).
+**Not tested:** a real OpenRouter call with a valid key. The agent harness examples use mock models only. Only the fallback was tested (a wrong key correctly falls back to the mock).
 
 ## About the sources
 
