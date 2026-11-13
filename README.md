@@ -6,8 +6,6 @@ A simple, student-friendly handbook on **evaluating LLMs** and **adding guardrai
 - Every chapter has a one-line summary, key terms, a diagram, and revision questions with answers.
 - Every code example runs on a weak laptop: CPU only, no paid service, **no API key needed**.
 
-> **Status: work in progress.** Evaluations is complete. Guardrails chapters 1 to 6 are written. Guardrails chapters 7 to 12 and the guardrails reading list are still to come (their code examples are already here and working).
-
 ## Who it is for
 
 Undergraduate students and beginners who know a little Python and want to understand how LLM apps are tested and made safer.
@@ -44,12 +42,17 @@ Undergraduate students and beginners who know a little Python and want to unders
 4. [Toxicity and content moderation](guardrails/04-toxicity-and-content-moderation.md)
 5. [Hallucination checks and grounding](guardrails/05-hallucination-and-grounding.md)
 6. [Structured-output validation](guardrails/06-structured-output-validation.md)
-7. Rate limits and cost limits (chapter coming; code: [`ch07_rate_and_cost_limits.py`](guardrails/code/ch07_rate_and_cost_limits.py))
-8. Human-in-the-loop (chapter coming; code: [`ch08_human_approval.py`](guardrails/code/ch08_human_approval.py))
-9. Guardrail tools and frameworks (coming)
-10. The OWASP Top 10 for LLM applications (coming)
-11. How guardrails are evaluated (chapter coming; code: [`ch11_evaluate_guardrail.py`](guardrails/code/ch11_evaluate_guardrail.py))
-12. Add guardrails to a small app (chapter coming; code: [`ch12_guarded_app/`](guardrails/code/ch12_guarded_app/))
+7. [Rate limits and cost limits](guardrails/07-rate-limits-and-cost-limits.md)
+8. [Human-in-the-loop](guardrails/08-human-in-the-loop.md)
+9. [Guardrail tools and frameworks](guardrails/09-guardrail-tools-and-frameworks.md)
+10. [The OWASP Top 10 for LLM applications](guardrails/10-owasp-top-10-for-llm-apps.md)
+11. [How guardrails are evaluated](guardrails/11-evaluating-guardrails.md)
+12. [Add guardrails to a small app](guardrails/12-add-guardrails-to-a-small-app.md)
+- [Reading list](guardrails/papers.md)
+
+### Suggested order
+
+Read Part 1 chapters 1 to 4 first. After that the two parts can be read in any order. Guardrails chapter 11 uses ideas from Part 1 chapter 3.
 
 ## How to run the code
 
@@ -93,6 +96,14 @@ All of these were run on Windows 11 with Python 3.14, with no key (mock model), 
 - `guardrails/code`: `ch01_guard_pipeline.py`, `ch02_injection_filter.py`, `ch03_pii_redaction.py`, `ch04_moderation_filter.py`, `ch05_grounding_check.py`, `ch06_structured_output.py`, `ch06_structured_output_pydantic.py`, `ch07_rate_and_cost_limits.py`, `ch08_human_approval.py`, `ch11_evaluate_guardrail.py`, `ch12_guarded_app/app.py`, `ch12_guarded_app/test_app.py` (11 of 11 tests pass)
 
 **Not tested:** a real OpenRouter call with a valid key. Only the fallback was tested (a wrong key correctly falls back to the mock).
+
+## About the sources
+
+Every paper and document linked in this handbook was checked to exist when it was written (November 2026). Tools and services in this area change quickly, so check the linked pages for current details. Summaries are in our own words. Diagrams were drawn for this handbook.
+
+## Found a mistake?
+
+Open an issue or a pull request. Corrections are welcome.
 
 ## Licence
 
